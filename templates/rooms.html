@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>home</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+    <div class = "container">
+        <h2>Всі кімнати</h2>
+        <ul>
+            {% for room in rooms %}
 
-</body>
-</html>
+            <li>{{room}} коштує {{room.cost_per_day}} доларів на день. Ця кімната предназначена для {{room.capacity}} людей</li>
+            <a href="{% url 'room_detail' room.id %}"> Дізнатися більше</a>
+
+
+            {% if room.room_image %}
+
+                <p><img src="{{ room.room_image.url }}" alt="Photo"></p>
+
+            {% endif %}
+
+            {% endfor %}
+
+
+
+
+        </ul>
+    </div>
+{% endblock %}

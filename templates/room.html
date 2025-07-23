@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <div class = "container">
+        <h2>Кімната з отелю {{room.hotel}} з номером {{room.room_number}}</h2>
+        <p>Бронювання кімнати на один день буде коштувати {{room.cost_per_day}}. Номер придназначений для {{room.capacity}} осіб.</p>
+
+        <p>Опис: {{room.description}}</p>
+
+        {% if room.room_image %}
+            <p><img src="{{ room.room_image.url }}" alt="Photo"></p>
+        {% endif %}
+
+    </div>
+{% endblock %}

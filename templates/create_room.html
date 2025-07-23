@@ -1,36 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Зареєструйте кімнату</title>
-</head>
-<body>
-    <form method="post">{% csrf_token %}
-        <p>
-            <label for="hotel">Отель:</label><br>
-            <input type="text" name="hotel" required>
-        </p>
-        <p>
-            <label for="room_number">Номер кімнати:</label><br>
-            <input type="number" name="room_number" required>
-        </p>
-        <p>
-            <label for="description">Опис:</label><br>
-            <input type="text" name="description" required>
-        </p>
-        <p>
-            <label for="capacity">Оптимальна кількість осіб в номері:</label><br>
-            <input type="number" name="capacity" required>
-        </p>
-        <p>
-            <label for="cost_per_day">Коштів за день:</label><br>
-            <input type="number" name="cost_per_day" required>
-        </p>
-        <p>
-            <label for="all_inclusive">Чи цей номер включає в себе все?:</label><br>
-            <input type="checkbox" name="all_inclusive" required>
-        </p>
-        <a 
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <div class = "container content">
+        <form method="post">{% csrf_token %}
+            <p>
+                <label for="hotel" class="form-label">Отель:</label><br>
+                <input type="text" class="form-control" name="hotel" required>
+            </p>
+            <p>
+                <label for="room_number" class="form-label">Номер кімнати:</label><br>
+                <input type="number" class="form-control" name="room_number" required>
+            </p>
+            <p>
+                <label for="description" class="form-label">Опис:</label><br>
+                <input type="text" class="form-control" name="description" required>
+            </p>
+            <p>
+                <label for="capacity" class="form-label">Оптимальна кількість осіб в номері:</label><br>
+                <input type="number" class="form-control" name="capacity" required>
+            </p>
+            <p>
+                <label for="cost_per_day" class="form-label">Коштів за день:</label><br>
+                <input type="number" class="form-control" name="cost_per_day" required>
+            </p>
+            <p>
+                <label for="all_inclusive">Чи цей номер включає в себе все?:</label><br>
+                <input type="checkbox" name="all_inclusive" required>
+            </p>
+            <button type="submit" class="btn btn-primary" >Зберегти</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class = "container content">
+        <form method="post">{% csrf_token %}
+            {% for message in messages %}
+            <p>
+                {{ message }}
+            </p>
+            {% endfor %}
+            <p>
+                <label for="hotel" class="form-label">Юзернейм:</label><br>
+                <input type="text" class="form-control" name="username" required>
+            </p>
+            <p>
+                <label for="room_number" class="form-label">Пароль:</label><br>
+                <input type="text" class="form-control" name="password" required>
+            </p>
+            <button type="submit" class="btn btn-primary" >Увійти</button>
+        </form>
+    </div>
+{% endblock %}
